@@ -110,10 +110,10 @@ const renderCards = () => {
         }</span>
       </div>
       <div class="flex gap-4 mt-6">
-        <button class="copy-btn flex-1 py-1 px-4 rounded-lg flex items-center justify-center gap-2 border border-primary text-primary hover:bg-green-50 font-semibold transition-colors">
+        <button class="copy-btn flex-1 py-1 px-4 cursor-pointer rounded-lg flex items-center justify-center gap-2 border border-primary text-primary hover:bg-green-50 font-semibold transition-colors">
           <span class="material-symbols-outlined !text-lg">content_copy</span> Copy
         </button>
-        <button class="call-btn flex-1 py-1 px-4 rounded-lg flex items-center justify-center gap-2 bg-primary text-white font-semibold transition-colors">
+        <button class="call-btn flex-1 py-1 px-4 cursor-pointer rounded-lg flex items-center justify-center gap-2 bg-primary text-white font-semibold transition-colors">
           <span class="material-symbols-outlined !text-lg">call</span> Call
         </button>
       </div>
