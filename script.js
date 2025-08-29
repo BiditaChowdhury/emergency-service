@@ -177,6 +177,9 @@ cardsContainer.addEventListener("click", (e) => {
   }
 });
 
-
+clearHistoryBtn.addEventListener("click", () => {
+  historyList.innerHTML = "";
+  alert("Call history cleared.");
+});
 
 renderCards();
