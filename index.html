@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emergency Service Directory</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-primary: #00a63e;
+        --color-text: #006747;
+        --color-nav: #41ff6b1a;
+        --color-secondary: #8987a1;
+        --color-background: #f5f8ff;
+        --font-roboto: Roboto, sans-serif;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="shortcut icon" href="assets/logo2.svg" type="image/x-icon">
+  </head>
+
+  <body class="font-roboto">
+    <nav class="sticky top-0 z-50 bg-white">
+      <div class="mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <div class="flex items-center">
+            <img
+              class="h-12 w-auto"
+              src="assets/logo.svg"
+              alt="Bangladesh Govt Logo"
+            />
+            <h1
+              class="text-xl font-extrabold leading-none ml-3 text-text w-1/2"
+            >
+              Emergency Service
+            </h1>
+          </div>
+          <div class="flex items-center gap-5">
+            <div class="flex items-center gap-1 px-4 py-1 rounded-full bg-nav">
+              <span id="heart-count" class="font-extrabold">0</span>
+              <span>❤️</span>
+            </div>
+            <div class="flex items-center gap-1 px-4 py-1 rounded-full bg-nav">
+              <span id="coin-count" class="font-extrabold">100</span>
+              <span>🪙</span>
+            </div>
+            <div
+              class="flex items-center space-x-2 text-white font-semibold bg-primary px-4 py-1 rounded-full"
+            >
+              <span id="copy-count">0</span>
+              <span>Copy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+   
+
+   
+
+    <script src="script.js"></script>
+  </body>
+</html>
