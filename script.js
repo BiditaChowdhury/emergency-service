@@ -123,9 +123,59 @@ const renderCards = () => {
     .join("");
 };
 
+const updateStats = () => {
+  heartCountSpan.textContent = heartCount;
+  coinCountSpan.textContent = coinCount;
+  copyCountSpan.textContent = copyCount;
+};
 
+cardsContainer.addEventListener("click", (e) => {
+  const card = e.target.closest(".bg-white");
+  if (!card) return;
 
+  if (
+    e.target.closest(".heart-icon") &&
+    !e.target.classList.contains("text-pink-500")
+  ) {
+    e.target.classList.replace("text-gray-300", "text-pink-500");
+    heartCount++;
+    updateStats();
+  }
 
+  if (e.target.closest(".call-btn")) {
+    if (coinCount < 20) return alert("Not enough coins!");
+    coinCount -= 20;
+    updateStats();
+
+    const { name, number } = card.dataset;
+    alert(`Calling ${name} at ${number}`);
+
+    const time = new Date().toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+
+    historyList.innerHTML =
+      `
+    <div class="flex justify-between items-center py-2 border-b last:border-b-0 border-gray-100">
+      <div>
+        <p class="font-semibold text-gray-800">${name}</p>
+        <p class="text-sm text-gray-500">${number}</p>
+      </div>
+      <div class="text-xs text-gray-400">${time}</div>
+    </div>
+  ` + historyList.innerHTML;
+  }
+
+  if (e.target.closest(".copy-btn")) {
+    const { number } = card.dataset;
+    navigator.clipboard.writeText(number).then(() => {
+      alert(`Copied: ${number}`);
+      copyCount++;
+      updateStats();
+    });
+  }
+});
 
 
 
