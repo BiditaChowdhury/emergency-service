@@ -84,6 +84,44 @@ let heartCount = 0,
   coinCount = 100,
   copyCount = 0;
 
+const renderCards = () => {
+  cardsContainer.innerHTML = services
+    .map(
+      (service) => `
+    <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col" data-id="${
+      service.id
+    }" data-name="${service.name}" data-number="${service.number}">
+      <div class="flex justify-between items-start mb-4">
+        <div class="${
+          service.category === "Police" ? "bg-blue-100" : "bg-red-100"
+        } p-3 pb-1 rounded-lg">
+          <span class="material-symbols-outlined ${
+            service.category === "Police" ? "text-blue-500" : "text-red-500"
+          }">${service.icon}</span>
+        </div>
+        <span class="material-symbols-outlined heart-icon cursor-pointer text-gray-300 hover:text-pink-500 text-3xl">favorite</span>
+      </div>
+      <div class="flex-grow">
+        <h3 class="text-lg font-bold text-gray-800">${service.name}</h3>
+        <p class="text-gray-500">${service.englishName}</p>
+        <p class="text-3xl font-bold text-gray-900 my-2">${service.number}</p>
+        <span class="inline-block bg-[#f2f2f2] text-gray-500 px-3 py-1 rounded-full text-sm font-semibold">${
+          service.category
+        }</span>
+      </div>
+      <div class="flex gap-4 mt-6">
+        <button class="copy-btn flex-1 py-1 px-4 rounded-lg flex items-center justify-center gap-2 border border-primary text-primary hover:bg-green-50 font-semibold transition-colors">
+          <span class="material-symbols-outlined !text-lg">content_copy</span> Copy
+        </button>
+        <button class="call-btn flex-1 py-1 px-4 rounded-lg flex items-center justify-center gap-2 bg-primary text-white font-semibold transition-colors">
+          <span class="material-symbols-outlined !text-lg">call</span> Call
+        </button>
+      </div>
+    </div>
+  `
+    )
+    .join("");
+};
 
 
 
@@ -91,4 +129,4 @@ let heartCount = 0,
 
 
 
-
+renderCards();
