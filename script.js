@@ -76,6 +76,9 @@ const services = [
 const cardsContainer = document.getElementById("cards-container");
 const historyList = document.getElementById("history-list");
 const clearHistoryBtn = document.getElementById("clear-history-btn");
+const heartCountSpanDesktop = document.getElementById("heart-count-desktop");
+const coinCountSpanDesktop = document.getElementById("coin-count-desktop");
+const copyCountSpanDesktop = document.getElementById("copy-count-desktop");
 const heartCountSpan = document.getElementById("heart-count");
 const coinCountSpan = document.getElementById("coin-count");
 const copyCountSpan = document.getElementById("copy-count");
@@ -127,6 +130,10 @@ const updateStats = () => {
   heartCountSpan.textContent = heartCount;
   coinCountSpan.textContent = coinCount;
   copyCountSpan.textContent = copyCount;
+
+  heartCountSpanDesktop.textContent = heartCount;
+  coinCountSpanDesktop.textContent = coinCount;
+  copyCountSpanDesktop.textContent = copyCount;
 };
 
 cardsContainer.addEventListener("click", (e) => {
